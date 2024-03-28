@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="CREATE_SEQUENCES" author="joseboba">
+        <sql>
+            CREATE SEQUENCE NMI_BANCO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_TIPO_CUENTA_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_DEPARTAMENTO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_TIPO_DEDUCCIONES_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_TIPO_SUSPENSION_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_BONIFICACION_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_TIPO_AUSENCIA_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_TIPO_DESCUENTO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_TIPO_PRESTACION_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_PERIODO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_EMPLEADO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_USUARIO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_PUESTO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_EMPLEADO_PUESTO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_HORAS_EXTRA_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_HORAS_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_PRESTAMO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_PRODUCCION_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_VENTA_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_OTRO_INGRESO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_SUSPENSION_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_EMPLEADO_BONIFICACION_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_AUSENCIA_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_PRESTACION_PAGADA_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_PAGO_CODIGO_SEQ;
+            CREATE SEQUENCE NMI_DEDUCCION_EMPLEADO_CODIGO_SEQ;
+        </sql>
+    </changeSet>
+
+    <changeSet id="CREATE_INITIAL_TABLES" author="joseboba">
+        <sql>
+            CREATE TABLE NMI_TIPO_MONEDA
+            (
+                TMO_Codigo      NUMBER,
+                TMO_Nombre      VARCHAR2(30),
+                TMO_Simbolo     VARCHAR2(3),
+                TMO_Tasa_Cambio NUMBER(8,4),
+                TMO_Estado      NUMBER(1),
+                CONSTRAINT PK_NMI_TIPO_MONEDA PRIMARY KEY (TMO_Codigo)
+            );
+
+            CREATE TABLE NMI_BANCO
+            (
+                BAN_Codigo NUMBER DEFAULT NMI_BANCO_CODIGO_SEQ.NEXTVAL,
+                BAN_Nombre VARCHAR2(30),
+                CONSTRAINT PK_NMI_BANCO PRIMARY KEY (BAN_Codigo)
+            );
+
+            CREATE TABLE NMI_TIPO_CUENTA
+            (
+                TCU_Codigo NUMBER DEFAULT NMI_TIPO_CUENTA_CODIGO_SEQ.NEXTVAL,
+                TCU_Nombre VARCHAR2(30),
+                CONSTRAINT PK_NMI_TIPO_CUENTA PRIMARY KEY (TCU_Codigo)
+            );
+
+            CREATE TABLE NMI_DEPARTAMENTO
+            (
+                DEP_Codigo      NUMBER DEFAULT NMI_DEPARTAMENTO_CODIGO_SEQ.NEXTVAL,
+                DEP_Nombre      VARCHAR2(30),
+                DEP_Descripcion VARCHAR2(200),
+                CONSTRAINT PK_NMI_DEPARTAMENTO PRIMARY KEY (DEP_Codigo)
+            );
+
+            CREATE TABLE NMI_TIPO_DEDUCCIONES
+            (
+                TDE_Codigo      NUMBER DEFAULT NMI_TIPO_DEDUCCIONES_CODIGO_SEQ.NEXTVAL,
+                TDE_Nombre      VARCHAR2(30),
+                TDE_Descripcion VARCHAR2(200),
+                TDE_Monto       NUMBER(10,2),
+                TDE_Porcentaje  NUMBER(2,2),
+                TDE_Estado      NUMBER(1),
+                CONSTRAINT PK_NMI_TIPO_DEDUCCIONES PRIMARY KEY (TDE_Codigo)
+            );
+
+            CREATE TABLE NMI_TIPO_SUSPENSION
+            (
+                TSU_Codigo      NUMBER DEFAULT NMI_TIPO_SUSPENSION_CODIGO_SEQ.NEXTVAL,
+                TSU_Nombre      VARCHAR2(30),
+                TSU_Descripcion VARCHAR2(200),
+                CONSTRAINT PK_NMI_TIPO_SUSPENSION PRIMARY KEY (TSU_Codigo)
+            );
+
+            CREATE TABLE NMI_BONIFICACION
+            (
+                BON_Codigo      NUMBER DEFAULT NMI_BONIFICACION_CODIGO_SEQ.NEXTVAL,
+                BON_Nombre      VARCHAR2(30),
+                BON_Descripcion VARCHAR2(200),
+                BON_Monto       NUMBER(10,2),
+                BON_Porcentaje  NUMBER(2,2),
+                BON_ESTADO      NUMBER(1),
+                CONSTRAINT PK_NMI_BONIFICACION PRIMARY KEY (BON_Codigo)
+            );
+
+            CREATE TABLE NMI_TIPO_AUSENCIA
+            (
+                TAU_Codigo       NUMBER DEFAULT NMI_TIPO_AUSENCIA_CODIGO_SEQ.NEXTVAL,
+                TAU_Descripcion  VARCHAR2(200),
+                TAU_GOCE_SALARIO NUMBER(1),
+                CONSTRAINT PK_NMI_TIPO_AUSENCIA PRIMARY KEY (TAU_Codigo)
+            );
+
+            CREATE TABLE NMI_TIPO_DESCUENTO
+            (
+                TDS_Codigo      NUMBER DEFAULT NMI_TIPO_DESCUENTO_CODIGO_SEQ.NEXTVAL,
+                TDS_Nombre      VARCHAR2(30),
+                TDS_Descripcion VARCHAR2(200),
+                TDS_Monto       NUMBER(10,2),
+                TDS_Porcentaje  NUMBER(2,2),
+                TDS_Estado      NUMBER(1),
+                CONSTRAINT PK_NMI_TIPO_DESCUENTO PRIMARY KEY (TDS_Codigo)
+            );
+
+            CREATE TABLE NMI_TIPO_PRESTACION
+            (
+                TPR_Codigo NUMBER DEFAULT NMI_TIPO_PRESTACION_CODIGO_SEQ.NEXTVAL,
+                TPR_Nombre VARCHAR2(30),
+                CONSTRAINT PK_NMI_TIPO_PRESTACION PRIMARY KEY (TPR_Codigo)
+            );
+
+            CREATE TABLE NMI_PERIODO
+            (
+                PER_Codigo       NUMBER DEFAULT NMI_PERIODO_CODIGO_SEQ.NEXTVAL,
+                PER_Nombre       VARCHAR2(30),
+                PER_Fecha_Inicio DATE,
+                PER_Fecha_Final  DATE,
+                PER_Fecha_Pago   TIMESTAMP,
+                CONSTRAINT PK_NMI_PERIODO PRIMARY KEY (PER_Codigo)
+            );
+
+            CREATE TABLE NMI_EMPLEADO
+            (
+                EMP_Codigo           NUMBER DEFAULT NMI_EMPLEADO_CODIGO_SEQ.NEXTVAL,
+                EMP_CUI              NUMBER(13),
+                EMP_NIT              VARCHAR2(9),
+                EMP_Primer_Nombre    VARCHAR2(30),
+                EMP_Segundo_Nombre   VARCHAR2(30),
+                EMP_Tercer_Nombre    VARCHAR2(30),
+                EMP_Primer_Apellido  VARCHAR2(30),
+                EMP_Segundo_Apellido VARCHAR2(30),
+                EMP_Apellido_Casada  VARCHAR2(30),
+                EMP_Fecha_Nacimiento DATE,
+                EMP_Profesion        VARCHAR2(30),
+                EMP_Telefono         NUMBER(8),
+                EMP_Correo           VARCHAR2(30),
+                EMP_Codigo_IGSS      NUMBER(13),
+                EMP_Encargado        NUMBER,
+                EMP_Fecha_Inicio     DATE,
+                EMP_Numero_Cuenta    VARCHAR2(15),
+                BAN_Codigo           NUMBER,
+                TCU_Codigo           NUMBER,
+                CONSTRAINT PK_NMI_EMPLEADO PRIMARY KEY (EMP_Codigo),
+                CONSTRAINT FK_NMI_EMPLEADO_NMI_BANCO FOREIGN KEY (BAN_Codigo) REFERENCES NMI_BANCO (BAN_Codigo),
+                CONSTRAINT FK_NMI_EMPLEADO_NMI_TIPO_CUENTA FOREIGN KEY (TCU_Codigo) REFERENCES NMI_TIPO_CUENTA (TCU_Codigo)
+            );
+
+            CREATE TABLE NMI_USUARIO
+            (
+                USU_Codigo     NUMBER DEFAULT NMI_USUARIO_CODIGO_SEQ.NEXTVAL,
+                EMP_Codigo     NUMBER,
+                USU_Contraseña VARCHAR2(100),
+                USU_Estado     NUMBER(1),
+                CONSTRAINT PK_NMI_USUARIO PRIMARY KEY (USU_Codigo),
+                CONSTRAINT FK_NMI_USUARIO_NMI_EMPLEADO FOREIGN KEY (EMP_Codigo) REFERENCES NMI_EMPLEADO (EMP_Codigo)
+            );
+
+            CREATE TABLE NMI_PUESTO
+            (
+                PUE_Codigo      NUMBER DEFAULT NMI_PUESTO_CODIGO_SEQ.NEXTVAL,
+                DEP_Codigo      NUMBER,
+                PUE_Nombre      VARCHAR2(100),
+                PUE_Descripcion VARCHAR2(200),
+                PUE_Estado      NUMBER(1),
+                CONSTRAINT PK_NMI_PUESTO PRIMARY KEY (PUE_Codigo),
+                CONSTRAINT FK_NMI_PUESTO_NMI_DEPARTAMENTO FOREIGN KEY (DEP_Codigo) REFERENCES NMI_DEPARTAMENTO (DEP_Codigo)
+            );
+
+            CREATE TABLE NMI_EMPLEADO_PUESTO
+            (
+                EPU_Codigo       NUMBER DEFAULT NMI_EMPLEADO_PUESTO_CODIGO_SEQ.NEXTVAL,
+                EMP_Codigo       NUMBER,
+                PUE_Codigo       NUMBER,
+                TMO_Codigo       NUMBER,
+                EPU_Fecha_Inicio DATE,
+                EPU_Fecha_Final  DATE,
+                EPU_Salario      NUMBER(10,2),
+                EPU_Estado       NUMBER(1),
+                CONSTRAINT PK_NMI_EMPLEADO_PUESTO PRIMARY KEY (EPU_Codigo),
+                CONSTRAINT FK_NMI_EMPLEADO_PUESTO_NMI_EMPLEADO FOREIGN KEY (EMP_Codigo) REFERENCES NMI_EMPLEADO (EMP_Codigo),
+                CONSTRAINT FK_NMI_EMPLEADO_PUESTO_NMI_PUESTO FOREIGN KEY (PUE_Codigo) REFERENCES NMI_PUESTO (PUE_Codigo),
+                CONSTRAINT FK_NMI_EMPLEADO_PUESTO_NMI_TIPO_MONEDA FOREIGN KEY (TMO_Codigo) REFERENCES NMI_TIPO_MONEDA (TMO_Codigo)
+            );
+
+            CREATE TABLE NMI_HORAS_EXTRA
+            (
+                HEX_Codigo   NUMBER DEFAULT NMI_HORAS_EXTRA_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo   NUMBER,
+                HEX_Cantidad NUMBER(10),
+                HEX_Fecha    TIMESTAMP,
+                CONSTRAINT PK_NMI_HORAS_EXTRA PRIMARY KEY (HEX_Codigo),
+                CONSTRAINT FK_NMI_HORAS_EXTRA_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo)
+            );
+
+            CREATE TABLE NMI_HORAS
+            (
+                HRS_Codigo       NUMBER DEFAULT NMI_HORAS_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo       NUMBER,
+                HRS_Hora_Entrada TIMESTAMP,
+                HRS_Hora_Salida  TIMESTAMP,
+                CONSTRAINT PK_NMI_HORAS PRIMARY KEY (HRS_Codigo),
+                CONSTRAINT FK_NMI_HORAS_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo)
+            );
+
+            CREATE TABLE NMI_PRESTAMO
+            (
+                PRE_Codigo         NUMBER DEFAULT NMI_PRESTAMO_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo         NUMBER,
+                PRE_Monto          NUMBER(10,2),
+                PRE_Interes        NUMBER(4,4),
+                PRE_Cantidad_Meses NUMBER(10),
+                PRE_Cuota_Mensual  NUMBER(10,2),
+                PRE_Descripcion    VARCHAR2(400),
+                CONSTRAINT PK_NMI_PRESTAMO PRIMARY KEY (PRE_Codigo),
+                CONSTRAINT FK_NMI_PRESTAMO_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo)
+            );
+
+            CREATE TABLE NMI_PRODUCCION
+            (
+                PRO_Codigo   NUMBER DEFAULT NMI_PRODUCCION_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo   NUMBER,
+                PRO_Cantidad NUMBER(10),
+                PRO_Fecha    TIMESTAMP,
+                CONSTRAINT PK_NMI_PRODUCCION PRIMARY KEY (PRO_Codigo),
+                CONSTRAINT FK_NMI_PRODUCCION_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo)
+            );
+
+            CREATE TABLE NMI_VENTA
+            (
+                VEN_Codigo NUMBER DEFAULT NMI_VENTA_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo NUMBER,
+                VEN_MONTO  NUMBER(10,2),
+                VEN_Fecha  TIMESTAMP,
+                CONSTRAINT PK_NMI_VENTA PRIMARY KEY (VEN_Codigo),
+                CONSTRAINT FK_NMI_VENTA_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo)
+            );
+
+            CREATE TABLE NMI_OTRO_INGRESO
+            (
+                OIN_Codigo NUMBER DEFAULT NMI_OTRO_INGRESO_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo NUMBER,
+                OIN_MONTO  NUMBER(10,2),
+                OIN_Fecha  TIMESTAMP,
+                CONSTRAINT PK_NMI_OTRO_INGRESO PRIMARY KEY (OIN_Codigo),
+                CONSTRAINT FK_NMI_OTRO_INGRESO_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo)
+            );
+
+            CREATE TABLE NMI_SUSPENSION
+            (
+                SUS_Codigo        NUMBER DEFAULT NMI_SUSPENSION_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo        NUMBER,
+                TSU_Codigo        NUMBER,
+                SUS_Fecha_Salida  TIMESTAMP,
+                SUS_Fecha_Regreso TIMESTAMP,
+                SUS_Estado        NUMBER(1),
+                CONSTRAINT PK_NMI_SUSPENSION PRIMARY KEY (SUS_Codigo),
+                CONSTRAINT FK_NMI_SUSPENSION_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo),
+                CONSTRAINT FK_NMI_SUSPENSION_NMI_TIPO_SUSPENSION FOREIGN KEY (TSU_Codigo) REFERENCES NMI_TIPO_SUSPENSION (TSU_Codigo)
+            );
+
+
+            CREATE TABLE NMI_EMPLEADO_BONIFICACION
+            (
+                EBO_Codigo NUMBER DEFAULT NMI_EMPLEADO_BONIFICACION_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo NUMBER,
+                BON_Codigo NUMBER,
+                EBO_Estado NUMBER(1),
+                CONSTRAINT PK_NMI_EMPLEADO_BONIFICACION PRIMARY KEY (EBO_Codigo),
+                CONSTRAINT FK_NMI_EMPLEADO_BONIFICACION_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo),
+                CONSTRAINT FK_NMI_EMPLEADO_BONIFICACION_NMI_BONIFICACION FOREIGN KEY (BON_Codigo) REFERENCES NMI_BONIFICACION (BON_Codigo)
+            );
+
+            CREATE TABLE NMI_AUSENCIA
+            (
+                AUS_Codigo        NUMBER DEFAULT NMI_AUSENCIA_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo        NUMBER,
+                TAU_Codigo        NUMBER,
+                TDS_Codigo        NUMBER,
+                AUS_Fecha_Salida  TIMESTAMP,
+                AUS_Fecha_Regreso TIMESTAMP,
+                CONSTRAINT PK_NMI_AUSENCIA PRIMARY KEY (AUS_Codigo),
+                CONSTRAINT FK_NMI_AUSENCIA_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo),
+                CONSTRAINT FK_NMI_AUSENCIA_NMI_TIPO_AUSENCIA FOREIGN KEY (TAU_Codigo) REFERENCES NMI_TIPO_AUSENCIA (TAU_Codigo),
+                CONSTRAINT FK_NMI_AUSENCIA_NMI_TIPO_DESCUENTO FOREIGN KEY (TDS_Codigo) REFERENCES NMI_TIPO_DESCUENTO (TDS_Codigo)
+            );
+
+            CREATE TABLE NMI_PRESTACION_PAGADA
+            (
+                PPA_Codigo     NUMBER DEFAULT NMI_PRESTACION_PAGADA_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo     NUMBER,
+                TPR_Codigo     NUMBER,
+                AUS_Fecha_Pago TIMESTAMP,
+                AUS_Monto      NUMBER(10,2),
+                CONSTRAINT PK_NMI_PRESTACION_PAGADA PRIMARY KEY (PPA_Codigo),
+                CONSTRAINT FK_NMI_PRESTACION_PAGADA_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo),
+                CONSTRAINT FK_NMI_PRESTACION_PAGADA_NMI_TIPO_PRESTACION FOREIGN KEY (TPR_Codigo) REFERENCES NMI_TIPO_PRESTACION (TPR_Codigo)
+            );
+
+            CREATE TABLE NMI_PAGO
+            (
+                PAG_Codigo            NUMBER DEFAULT NMI_PAGO_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo            NUMBER,
+                PER_Codigo            NUMBER,
+                PAG_Aguinaldo         NUMBER (10,2),
+                PAG_Bono_Catorce      NUMBER (10,2),
+                PAG_Indemnizacion     NUMBER (10,2),
+                PAG_Fecha             TIMESTAMP,
+                PAG_Salario_Base      NUMBER(10,2),
+                PAG_Salario_Devengado NUMBER(10,2),
+                PAG_Extraordinario    NUMBER(10,2),
+                PAG_Deducciones       NUMBER(10,2),
+                CONSTRAINT PK_NMI_PAGO PRIMARY KEY (PAG_Codigo),
+                CONSTRAINT FK_NMI_PAGO_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo),
+                CONSTRAINT FK_NMI_PAGO_NMI_PERIODO FOREIGN KEY (PER_Codigo) REFERENCES NMI_PERIODO (PER_Codigo)
+            );
+
+            CREATE TABLE NMI_DEDUCCION_EMPLEADO
+            (
+                DEM_Codigo NUMBER DEFAULT NMI_DEDUCCION_EMPLEADO_CODIGO_SEQ.NEXTVAL,
+                EPU_Codigo NUMBER,
+                TDE_Codigo NUMBER,
+                DEM_Estado NUMBER(1),
+                CONSTRAINT PK_NMI_DEDUCCION_EMPLEADO PRIMARY KEY (DEM_Codigo),
+                CONSTRAINT FK_NMI_DEDUCCION_EMPLEADO_NMI_EMPLEADO_PUESTO FOREIGN KEY (EPU_Codigo) REFERENCES NMI_EMPLEADO_PUESTO (EPU_Codigo),
+                CONSTRAINT FK_NMI_DEDUCCION_EMPLEADO_NMI_TIPO_DEDUCCIONES FOREIGN KEY (TDE_Codigo) REFERENCES NMI_TIPO_DEDUCCIONES (TDE_Codigo)
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
