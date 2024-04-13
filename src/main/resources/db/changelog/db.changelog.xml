@@ -342,4 +342,34 @@
             );
         </sql>
     </changeSet>
+
+    <changeSet id="DEPARTMENT_PROCEDURES" author="joseboba">
+        <createProcedure
+            dbms="oracle"
+            path="DEPARTAMENTO/PA_NMI_DEPARTAMENTO_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="DEPARTAMENTO/PA_NMI_DEPARTAMENTO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="DEPARTAMENTO/PA_NMI_DEPARTAMENTO_ELIMINAR.sql"
+        />
+    </changeSet>
+    
+    <changeSet id="POSITION_PROCEDURES" author="joseboba">
+        <createProcedure
+            dbms="oracle"
+            path="PUESTO/PA_NMI_PUESTO_GUARDAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="PUESTO/PA_NMI_PUESTO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="PUESTO/PA_NMI_PUESTO_ELIMINAR.sql"
+        />
+    </changeSet>
 </databaseChangeLog>
