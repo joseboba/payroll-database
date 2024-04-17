@@ -372,4 +372,41 @@
             path="PUESTO/PA_NMI_PUESTO_ELIMINAR.sql"
         />
     </changeSet>
+
+    <changeSet id="ADD_NAME_TO_ABSENCE_TYPE" author="jramirez">
+        <sql>
+            ALTER TABLE NMI_TIPO_AUSENCIA ADD TAU_Nombre VARCHAR2(200);
+        </sql>
+    </changeSet>
+
+    <changeSet id="ABSENCE_TYPE_PROCEDURES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/PA_NMI_TIPO_ASUENCIA_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/PA_NMI_TIPO_ASUENCIA_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/PA_NMI_TIPO_ASUENCIA_ELIMINAR.sql"
+        />
+    </changeSet>
+
+    <changeSet id="DISCOUNT_TYPE_PROCEDURES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/PA_NMI_TIPO_DESCUENTO_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/PA_NMI_TIPO_DESCUENTO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/PA_NMI_TIPO_DESCUENTO_ELIMINAR.sql"
+        />
+    </changeSet>
+
 </databaseChangeLog>
