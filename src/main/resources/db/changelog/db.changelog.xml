@@ -409,4 +409,72 @@
         />
     </changeSet>
 
+    <changeSet id="ADD_DEPARTMENTS_FUCTIONS" author="joseboba">
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="DEPARTAMENTO/FN_OBTENER_DEPARTAMENTO_POR_ID.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="DEPARTAMENTO/FN_OBTENER_LISTADO_DEPARTAMENTO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="DEPARTAMENTO/FN_OBTENER_TOTAL_ELEMENTOS_DEPARTAMENTO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="DEPARTAMENTO/FN_OBTENER_TODO_DEPARTAMENTOS.sql"
+        />
+    </changeSet>
+
+    <changeSet id="ADD_NEW_DEPARTEMENTS_PROCEDURES" author="joseboba">
+        <createProcedure
+                dbms="oracle"
+                path="DEPARTAMENTO/PA_OBTENER_DEPARTAMENTO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="DEPARTAMENTO/PA_OBTENER_DEPARTAMENTO_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="DEPARTAMENTO/PA_OBTENER_TODO_DEPARTAMENTOS.sql"
+        />
+    </changeSet>
+
+    <changeSet id="ADD_POSITION_FUCTIONS" author="joseboba">
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PUESTO/FN_OBTENER_PUESTO_POR_ID.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PUESTO/FN_OBTENER_LISTADO_PUESTO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PUESTO/FN_OBTENER_TOTAL_ELEMENTOS_PUESTO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PUESTO/FN_OBTENER_TODO_PUESTOS.sql"
+        />
+    </changeSet>
+
+    <changeSet id="ADD_NEW_POSITION_PROCEDURES" author="joseboba">
+        <createProcedure
+                dbms="oracle"
+                path="PUESTO/PA_OBTENER_PUESTO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PUESTO/PA_OBTENER_PUESTO_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PUESTO/PA_OBTENER_TODO_PUESTOS.sql"
+        />
+    </changeSet>
+
 </databaseChangeLog>
