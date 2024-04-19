@@ -557,6 +557,11 @@
         </sql>
     </changeSet>
 
+    <changeSet id="ALTER_TABLE" author="FranciscoAQM">
+        <sql>
+            ALTER TABLE  NMI_TIPO_DEDUCCIONES MODIFY TDE_PORCENTAJE NUMBER(10,2);
+        </sql>
+    </changeSet>
 
     <changeSet id="TIPO_DEDUCCIONES_PROCEDIMIENTOS" author="FranciscoAQM">
         <createProcedure
