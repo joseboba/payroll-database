@@ -476,5 +476,13 @@
                 path="PUESTO/PA_OBTENER_TODO_PUESTOS.sql"
         />
     </changeSet>
+    
+    <changeSet id="INSERT_BANCO_AND_TIPO_CUENTA" author="joseboba">
+        <sql>
+            INSERT INTO NMI_BANCO(BAN_NOMBRE) VALUES ('BANCO INDUSTRIAL');
+            INSERT INTO NMI_TIPO_CUENTA(TCU_NOMBRE) VALUES ('MONETARIA');
+            INSERT INTO NMI_TIPO_CUENTA(TCU_NOMBRE) VALUES ('AHORRO');
+        </sql>
+    </changeSet>
 
 </databaseChangeLog>
