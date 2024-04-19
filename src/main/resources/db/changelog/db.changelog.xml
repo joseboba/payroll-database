@@ -551,13 +551,13 @@
         <createProcedure path="TIPO_CUENTA/PA_OBTENER_TODO_TIPO_CUENTA.sql" dbms="oracle" />
     </changeSet>
 
-    <changeSet id="ALTER_TABLE" author="jbarahona">
+    <changeSet id="ALTER_TABLE_NMI_BONIFICACION" author="jbarahona">
         <sql>
             ALTER TABLE  NMI_BONIFICACION MODIFY BON_PORCENTAJE NUMBER(10,2);
         </sql>
     </changeSet>
 
-    <changeSet id="ALTER_TABLE" author="FranciscoAQM">
+    <changeSet id="ALTER_TABLE_NMI_TIPO_DEDUCCIONES" author="FranciscoAQM">
         <sql>
             ALTER TABLE  NMI_TIPO_DEDUCCIONES MODIFY TDE_PORCENTAJE NUMBER(10,2);
         </sql>
@@ -659,5 +659,185 @@
             dbms="oracle"
             path="Tipo_Prestacion/PA_OBTENER_TODO_TIPO_PRESTACION.sql"
         />
-    </changeSet> 
+    </changeSet>
+
+    <changeSet id="ALTER_TABLE_NMI_TIPO_DESCUENTO" author="jramirez">
+        <sql>
+            ALTER TABLE  NMI_TIPO_DESCUENTO MODIFY TDS_PORCENTAJE NUMBER(10,2);
+        </sql>
+    </changeSet>
+
+    <changeSet id="CREATE SEQUENCE NMI_TIPO_MONEDA" author="jramirez">
+        <sql>
+            CREATE SEQUENCE NMI_TIPO_MONEDA_CODIGO_SEQ;
+        </sql>
+    </changeSet>
+
+    <changeSet id="ALTER_TABLE_NMI_TIPO_MONEDA" author="jramirez">
+        <sql>
+            ALTER TABLE  NMI_TIPO_MONEDA MODIFY TMO_Codigo NUMBER DEFAULT NMI_TIPO_MONEDA_CODIGO_SEQ.NEXTVAL;
+        </sql>
+    </changeSet>
+
+    <changeSet id="PERIODO_FUNCIONES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/FN_OBTENER_LISTADO_PERIODO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/FN_OBTENER_PERIODO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/FN_OBTENER_TODO_PERIODOS.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/FN_OBTENER_TOTAL_ELEMENTOS_PERIODO.sql"
+        />
+    </changeSet>
+
+    <changeSet id="PERIODO_PROCEDIMIENTOS" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/PA_NMI_PERIODO_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/PA_NMI_PERIODO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/PA_NMI_PERIODO_ELIMINAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/PA_OBTENER_PERIODO_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/PA_OBTENER_PERIODO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/PA_OBTENER_TODO_PERIODOS.sql"
+        />
+    </changeSet>
+
+    <changeSet id="TIPO_MONEDA_FUNCIONES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/FN_OBTENER_LISTADO_TIPO_MONEDA.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/FN_OBTENER_TIPO_MONEDA_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/FN_OBTENER_TODO_TIPOS_MONEDA.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/FN_OBTENER_TOTAL_ELEMENTOS_TIPO_MONEDA.sql"
+        />
+    </changeSet>
+
+    <changeSet id="TIPO_MONEDA_PROCEDIMIENTOS" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/PA_NMI_TIPO_MONEDA_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/PA_NMI_TIPO_MONEDA_ELIMINAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/PA_NMI_TIPO_MONEDA_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/PA_OBTENER_TIPO_MONEDA_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/PA_OBTENER_TIPO_MONEDA_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_MONEDA/PA_OBTENER_TODO_TIPOS_MONEDA.sql"
+        />
+    </changeSet>
+
+    <changeSet id="TIPO_DESCUENTO_FUNCIONES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/FN_OBTENER_LISTADO_TIPO_DESCUENTO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/FN_OBTENER_TIPO_DESCUENTO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/FN_OBTENER_TODO_TIPOS_DESCUENTO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/FN_OBTENER_TOTAL_ELEMENTOS_TIPO_DESCUENTO.sql"
+        />
+    </changeSet>
+
+    <changeSet id="TIPO_DESCUENTO_PROCEDIMIENTOS_NUEVOS" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/PA_OBTENER_TIPO_DESCUENTO_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/PA_OBTENER_TIPO_DESCUENTO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/PA_OBTENER_TODO_TIPOS_DESCUENTO.sql"
+        />
+    </changeSet>
+
+    <changeSet id="TIPO_AUSENCIA_FUNCIONES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/FN_OBTENER_LISTADO_TIPO_AUSENCIA.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/FN_OBTENER_TIPO_AUSENCIA_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/FN_OBTENER_TODO_TIPOS_AUSENCIA.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/FN_OBTENER_TOTAL_ELEMENTOS_TIPO_AUSENCIA.sql"
+        />
+    </changeSet>
+
+    <changeSet id="TIPO_AUSENCIA_PROCEDIMIENTOS_NUEVOS" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/PA_OBTENER_TIPO_AUSENCIA_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/PA_OBTENER_TIPO_AUSENCIA_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/PA_OBTENER_TODO_TIPOS_AUSENCIA.sql"
+        />
+    </changeSet>
+
+
 </databaseChangeLog>
