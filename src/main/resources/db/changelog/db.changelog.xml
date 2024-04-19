@@ -551,4 +551,10 @@
         <createProcedure path="TIPO_CUENTA/PA_OBTENER_TODO_TIPO_CUENTA.sql" dbms="oracle" />
     </changeSet>
 
+    <changeSet id="ALTER_TABLE" author="jbarahona">
+        <sql>
+            ALTER TABLE  NMI_BONIFICACION MODIFY BON_PORCENTAJE NUMBER(10,2);
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>
