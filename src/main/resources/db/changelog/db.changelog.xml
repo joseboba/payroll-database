@@ -541,4 +541,14 @@
         </sql>
     </changeSet>
 
+    <changeSet id="TPO_CUENTA_AND_BANCOS_FN" author="jbobadilla">
+        <sqlFile path="BANCOS/FN_OBTENER_TODO_BANCOS.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="TIPO_CUENTA/FN_OBTENER_TODO_TIPO_CUENTA.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
+    <changeSet id="TPO_CUENTA_AND_BANCOS_PA" author="jbobadilla">
+        <createProcedure path="BANCOS/PA_OBTENER_TODO_BANCOS.sql" dbms="oracle" />
+        <createProcedure path="TIPO_CUENTA/PA_OBTENER_TODO_TIPO_CUENTA.sql" dbms="oracle" />
+    </changeSet>
+
 </databaseChangeLog>
