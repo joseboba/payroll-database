@@ -654,5 +654,52 @@
             dbms="oracle"
             path="Tipo_Prestacion/PA_OBTENER_TODO_TIPO_PRESTACION.sql"
         />
-    </changeSet> 
+    </changeSet>
+
+    <changeSet id="EMPLOYEE_FUNCTIONS" author="rgaldamez">
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="EMPLEADOS/FN_OBTENER_EMPLEADO_POR_ID.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="EMPLEADOS/FN_OBTENER_LISTADO_EMPLEADO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="EMPLEADOS/FN_OBTENER_TOTAL_ELEMENTOS_EMPLEADO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="EMPLEADOS/FN_OBTENER_TODO_EMPLEADO.sql"
+        />
+    </changeSet>
+
+    <changeSet id="EMPLOYEE_PROCEDURES" author="rgaldamez">
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_NMI_EMPLEADO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_NMI_EMPLEADO_DESHABILITAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_NMI_EMPLEADO_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_OBTENER_EMPLEADO_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_OBTENER_EMPLEADO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_OBTENER_TODO_EMPLEADO.sql"
+        />
+    </changeSet>
+
 </databaseChangeLog>
