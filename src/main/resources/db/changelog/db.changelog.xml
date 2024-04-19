@@ -372,4 +372,34 @@
             path="PUESTO/PA_NMI_PUESTO_ELIMINAR.sql"
         />
     </changeSet>
+    
+    <changeSet id="TIPO_DEDUCCIONES_PROCEDIMIENTOS" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_NMI_TIPO_DEDUCCIONES_GUARDAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_NMI_TIPO_DEDUCCIONES_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_NMI_TIPO_DEDUCCIONES_ELIMINAR.sql"
+        />
+    </changeSet>
+    
+    <changeSet id="TIPO_PRESTACION_PROCEDIMIENTOS" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_NMI_TIPO_PRESTACION_GUARDAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_NMI_TIPO_PRESTACION_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_NMI_TIPO_PRESTACION_ELIMINAR.sql"
+        />
+    </changeSet>
 </databaseChangeLog>
