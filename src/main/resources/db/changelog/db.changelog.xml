@@ -373,6 +373,191 @@
         />
     </changeSet>
     
+    <changeSet id="ADD_NAME_TO_ABSENCE_TYPE" author="jramirez">
+        <sql>
+            ALTER TABLE NMI_TIPO_AUSENCIA ADD TAU_Nombre VARCHAR2(200);
+        </sql>
+    </changeSet>
+
+    <changeSet id="ABSENCE_TYPE_PROCEDURES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/PA_NMI_TIPO_ASUENCIA_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/PA_NMI_TIPO_ASUENCIA_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_AUSENCIA/PA_NMI_TIPO_ASUENCIA_ELIMINAR.sql"
+        />
+    </changeSet>
+
+    <changeSet id="DISCOUNT_TYPE_PROCEDURES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/PA_NMI_TIPO_DESCUENTO_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/PA_NMI_TIPO_DESCUENTO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="TIPO_DESCUENTO/PA_NMI_TIPO_DESCUENTO_ELIMINAR.sql"
+        />
+    </changeSet>
+
+    <changeSet id="ADD_DEPARTMENTS_FUCTIONS" author="joseboba">
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="DEPARTAMENTO/FN_OBTENER_DEPARTAMENTO_POR_ID.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="DEPARTAMENTO/FN_OBTENER_LISTADO_DEPARTAMENTO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="DEPARTAMENTO/FN_OBTENER_TOTAL_ELEMENTOS_DEPARTAMENTO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="DEPARTAMENTO/FN_OBTENER_TODO_DEPARTAMENTOS.sql"
+        />
+    </changeSet>
+
+    <changeSet id="ADD_NEW_DEPARTEMENTS_PROCEDURES" author="joseboba">
+        <createProcedure
+                dbms="oracle"
+                path="DEPARTAMENTO/PA_OBTENER_DEPARTAMENTO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="DEPARTAMENTO/PA_OBTENER_DEPARTAMENTO_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="DEPARTAMENTO/PA_OBTENER_TODO_DEPARTAMENTOS.sql"
+        />
+    </changeSet>
+
+    <changeSet id="ADD_POSITION_FUCTIONS" author="joseboba">
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PUESTO/FN_OBTENER_PUESTO_POR_ID.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PUESTO/FN_OBTENER_LISTADO_PUESTO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PUESTO/FN_OBTENER_TOTAL_ELEMENTOS_PUESTO.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PUESTO/FN_OBTENER_TODO_PUESTOS.sql"
+        />
+    </changeSet>
+
+    <changeSet id="ADD_NEW_POSITION_PROCEDURES" author="joseboba">
+        <createProcedure
+                dbms="oracle"
+                path="PUESTO/PA_OBTENER_PUESTO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PUESTO/PA_OBTENER_PUESTO_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PUESTO/PA_OBTENER_TODO_PUESTOS.sql"
+        />
+    </changeSet>
+
+    <changeSet id="BONIFICATION_PROCEDURES" author="jbarahona">
+        <createProcedure
+            dbms="oracle"
+            path="BONIFICACION/PA_NMI_BONIFICACION_INSERTAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="BONIFICACION/PA_NMI_BONIFICACION_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="BONIFICACION/PA_NMI_BONIFICACION_ELIMINAR.sql"
+        />
+    </changeSet>
+
+    <changeSet id="SUSPENSION_TYPE_PROCEDURES" author="jbarahona">
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_SUSPENSION/PA_NMI_TIPO_SUSPENSION_INSERTAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_SUSPENSION/PA_NMI_TIPO_SUSPENSION_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_SUSPENSION/PA_NMI_TIPO_SUSPENSION_ELIMINAR.sql"
+        />
+    </changeSet>
+
+    <changeSet id="OTHER_INCOME_PROCEDURES" author="jbarahona">
+        <createProcedure
+            dbms="oracle"
+            path="OTRO_INGRESO/PA_NMI_OTRO_INGRESO_INSERTAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="OTRO_INGRESO/PA_NMI_OTRO_INGRESO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="OTRO_INGRESO/PA_NMI_OTRO_INGRESO_ELIMINAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="OTRO_INGRESO/PA_OBTENER_EMPLEADOS_POR_PUESTOS.sql"
+        />
+    </changeSet>
+
+     <changeSet id="OTHER_INCOME_FUCTIONS" author="jbarahona">
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="OTRO_INGRESO/FN_OBTENER_EMPLEADO_DESDE_EMPLEADO_PUESTO.sql"
+        />
+    </changeSet>
+
+    <changeSet id="INSERT_BANCO_AND_TIPO_CUENTA" author="joseboba">
+        <sql>
+            INSERT INTO NMI_BANCO(BAN_NOMBRE) VALUES ('BANCO INDUSTRIAL');
+            INSERT INTO NMI_TIPO_CUENTA(TCU_NOMBRE) VALUES ('MONETARIA');
+            INSERT INTO NMI_TIPO_CUENTA(TCU_NOMBRE) VALUES ('AHORRO');
+        </sql>
+    </changeSet>
+
+    <changeSet id="TPO_CUENTA_AND_BANCOS_FN" author="jbobadilla">
+        <sqlFile path="BANCOS/FN_OBTENER_TODO_BANCOS.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="TIPO_CUENTA/FN_OBTENER_TODO_TIPO_CUENTA.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
+    <changeSet id="TPO_CUENTA_AND_BANCOS_PA" author="jbobadilla">
+        <createProcedure path="BANCOS/PA_OBTENER_TODO_BANCOS.sql" dbms="oracle" />
+        <createProcedure path="TIPO_CUENTA/PA_OBTENER_TODO_TIPO_CUENTA.sql" dbms="oracle" />
+    </changeSet>
+
+    <changeSet id="ALTER_TABLE" author="jbarahona">
+        <sql>
+            ALTER TABLE  NMI_BONIFICACION MODIFY BON_PORCENTAJE NUMBER(10,2);
+        </sql>
+    </changeSet>
+
+
     <changeSet id="TIPO_DEDUCCIONES_PROCEDIMIENTOS" author="FranciscoAQM">
         <createProcedure
             dbms="oracle"
@@ -388,6 +573,40 @@
         />
     </changeSet>
     
+    <changeSet id="TIPO_DEDUCCIONES_FUNCIONES" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/FN_OBTENER_LISTADO_TIPO_DEDUCCIONES.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/FN_OBTENER_TIPO_DEDUCCIONES_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/FN_OBTENER_TODO_TIPO_DEDUCCIONES.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/FN_OBTENER_TOTAL_ELEMENTOS_TIPO_DEDUCCIONES.sql"
+        />
+    </changeSet>
+    
+    <changeSet id="TIPO_DEDUCCIONES_NUEVOS_PROCEDIMIENTOS" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_OBTENER_TIPO_DEDUCCIONES_LISTADO.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_OBTENER_TIPO_DEDUCCIONES_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_OBTENER_TODO_TIPO_DEDUCCIONES.sql"
+        />
+    </changeSet>
+      
     <changeSet id="TIPO_PRESTACION_PROCEDIMIENTOS" author="FranciscoAQM">
         <createProcedure
             dbms="oracle"
@@ -402,4 +621,38 @@
             path="Tipo_Prestacion/PA_NMI_TIPO_PRESTACION_ELIMINAR.sql"
         />
     </changeSet>
+    
+   <changeSet id="TIPO_PRESTACION_FUNCIONES" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/FN_OBTENER_LISTADO_TIPO_PRESTACION.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/FN_OBTENER_TIPO_PRESTACION_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/FN_OBTENER_TODO_TIPO_PRESTACION.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/FN_OBTENER_TOTAL_ELEMENTOS_TIPO_PRESTACION.sql"
+        />
+    </changeSet>
+    
+    <changeSet id="TIPO_PRESTACION_NUEVOS_PROCEDIMIENTOS" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_OBTENER_TIPO_PRESTACION_LISTADO.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_OBTENER_TIPO_PRESTACION_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_OBTENER_TODO_TIPO_PRESTACION.sql"
+        />
+    </changeSet> 
 </databaseChangeLog>
