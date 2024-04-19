@@ -476,5 +476,60 @@
                 path="PUESTO/PA_OBTENER_TODO_PUESTOS.sql"
         />
     </changeSet>
-
+    
+    <changeSet id="BONIFICATION_PROCEDURES" author="jbarahona">
+        <createProcedure
+            dbms="oracle"
+            path="BONIFICACION/PA_NMI_BONIFICACION_INSERTAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="BONIFICACION/PA_NMI_BONIFICACION_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="BONIFICACION/PA_NMI_BONIFICACION_ELIMINAR.sql"
+        />
+    </changeSet>
+    
+    <changeSet id="SUSPENSION_TYPE_PROCEDURES" author="jbarahona">
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_SUSPENSION/PA_NMI_TIPO_SUSPENSION_INSERTAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_SUSPENSION/PA_NMI_TIPO_SUSPENSION_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_SUSPENSION/PA_NMI_TIPO_SUSPENSION_ELIMINAR.sql"
+        />
+    </changeSet>
+    
+    <changeSet id="OTHER_INCOME_PROCEDURES" author="jbarahona">
+        <createProcedure
+            dbms="oracle"
+            path="OTRO_INGRESO/PA_NMI_OTRO_INGRESO_INSERTAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="OTRO_INGRESO/PA_NMI_OTRO_INGRESO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="OTRO_INGRESO/PA_NMI_OTRO_INGRESO_ELIMINAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="OTRO_INGRESO/PA_OBTENER_EMPLEADOS_POR_PUESTOS.sql"
+        />
+    </changeSet>
+    
+     <changeSet id="OTHER_INCOME_FUCTIONS" author="jbarahona">
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="OTRO_INGRESO/FN_OBTENER_EMPLEADO_DESDE_EMPLEADO_PUESTO.sql"
+        />
+    </changeSet>
 </databaseChangeLog>
