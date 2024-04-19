@@ -476,7 +476,7 @@
                 path="PUESTO/PA_OBTENER_TODO_PUESTOS.sql"
         />
     </changeSet>
-    
+
     <changeSet id="BONIFICATION_PROCEDURES" author="jbarahona">
         <createProcedure
             dbms="oracle"
@@ -491,7 +491,7 @@
             path="BONIFICACION/PA_NMI_BONIFICACION_ELIMINAR.sql"
         />
     </changeSet>
-    
+
     <changeSet id="SUSPENSION_TYPE_PROCEDURES" author="jbarahona">
         <createProcedure
             dbms="oracle"
@@ -506,7 +506,7 @@
             path="TIPO_SUSPENSION/PA_NMI_TIPO_SUSPENSION_ELIMINAR.sql"
         />
     </changeSet>
-    
+
     <changeSet id="OTHER_INCOME_PROCEDURES" author="jbarahona">
         <createProcedure
             dbms="oracle"
@@ -525,11 +525,30 @@
             path="OTRO_INGRESO/PA_OBTENER_EMPLEADOS_POR_PUESTOS.sql"
         />
     </changeSet>
-    
+
      <changeSet id="OTHER_INCOME_FUCTIONS" author="jbarahona">
         <sqlFile dbms="oracle"
                  endDelimiter="/"
                  path="OTRO_INGRESO/FN_OBTENER_EMPLEADO_DESDE_EMPLEADO_PUESTO.sql"
         />
     </changeSet>
+
+    <changeSet id="INSERT_BANCO_AND_TIPO_CUENTA" author="joseboba">
+        <sql>
+            INSERT INTO NMI_BANCO(BAN_NOMBRE) VALUES ('BANCO INDUSTRIAL');
+            INSERT INTO NMI_TIPO_CUENTA(TCU_NOMBRE) VALUES ('MONETARIA');
+            INSERT INTO NMI_TIPO_CUENTA(TCU_NOMBRE) VALUES ('AHORRO');
+        </sql>
+    </changeSet>
+
+    <changeSet id="TPO_CUENTA_AND_BANCOS_FN" author="jbobadilla">
+        <sqlFile path="BANCOS/FN_OBTENER_TODO_BANCOS.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="TIPO_CUENTA/FN_OBTENER_TODO_TIPO_CUENTA.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
+    <changeSet id="TPO_CUENTA_AND_BANCOS_PA" author="jbobadilla">
+        <createProcedure path="BANCOS/PA_OBTENER_TODO_BANCOS.sql" dbms="oracle" />
+        <createProcedure path="TIPO_CUENTA/PA_OBTENER_TODO_TIPO_CUENTA.sql" dbms="oracle" />
+    </changeSet>
+
 </databaseChangeLog>
