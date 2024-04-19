@@ -1,0 +1,29 @@
+CREATE OR REPLACE FUNCTION FN_OBTENER_LISTADO_TIPO_DEDUCCIONES(
+    P_IN_SEARCH IN VARCHAR2,
+    P_IN_SIZE IN NUMBER,
+    P_IN_PAGE IN NUMBER
+)
+    RETURN SYS_REFCURSOR
+    IS
+    CUR_REGISTROS SYS_REFCURSOR;
+    V_NEW_PAGE    NUMBER := 0;
+BEGIN
+    V_NEW_PAGE := P_IN_PAGE * P_IN_SIZE;
+    OPEN CUR_REGISTROS FOR
+        SELECT tde_codigo,
+               tde_nombre,
+               tde_descripcion,
+               tde_monto,
+               tde_porcentaje,
+               tde_estado
+        FROM NMI_TIPO_DEDUCCIONES
+        WHERE (P_IN_SEARCH IS NULL OR TDE_CODIGO LIKE '%' || UPPER(P_IN_SEARCH) || '%')
+           OR (P_IN_SEARCH IS NULL OR TDE_NOMBRE LIKE '%' || UPPER(P_IN_SEARCH) || '%')
+           OR (P_IN_SEARCH IS NULL OR TDE_DESCRIPCION LIKE '%' || UPPER(P_IN_SEARCH) || '%')
+           OR (P_IN_SEARCH IS NULL OR TDE_MONTO LIKE '%' || UPPER(P_IN_SEARCH) || '%')
+           OR (P_IN_SEARCH IS NULL OR TDE_PORCENTAJE LIKE '%' || UPPER(P_IN_SEARCH) || '%')
+           OR (P_IN_SEARCH IS NULL OR TDE_ESTADO LIKE '%' || UPPER(P_IN_SEARCH) || '%')
+        OFFSET V_NEW_PAGE ROWS FETCH NEXT P_IN_SIZE ROWS ONLY;
+    RETURN CUR_REGISTROS;
+END;
+/

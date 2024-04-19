@@ -372,7 +372,7 @@
             path="PUESTO/PA_NMI_PUESTO_ELIMINAR.sql"
         />
     </changeSet>
-
+    
     <changeSet id="ADD_NAME_TO_ABSENCE_TYPE" author="jramirez">
         <sql>
             ALTER TABLE NMI_TIPO_AUSENCIA ADD TAU_Nombre VARCHAR2(200);
@@ -557,4 +557,102 @@
         </sql>
     </changeSet>
 
+
+    <changeSet id="TIPO_DEDUCCIONES_PROCEDIMIENTOS" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_NMI_TIPO_DEDUCCIONES_GUARDAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_NMI_TIPO_DEDUCCIONES_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_NMI_TIPO_DEDUCCIONES_ELIMINAR.sql"
+        />
+    </changeSet>
+    
+    <changeSet id="TIPO_DEDUCCIONES_FUNCIONES" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/FN_OBTENER_LISTADO_TIPO_DEDUCCIONES.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/FN_OBTENER_TIPO_DEDUCCIONES_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/FN_OBTENER_TODO_TIPO_DEDUCCIONES.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/FN_OBTENER_TOTAL_ELEMENTOS_TIPO_DEDUCCIONES.sql"
+        />
+    </changeSet>
+    
+    <changeSet id="TIPO_DEDUCCIONES_NUEVOS_PROCEDIMIENTOS" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_OBTENER_TIPO_DEDUCCIONES_LISTADO.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_OBTENER_TIPO_DEDUCCIONES_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="TIPO_DEDUCCIONES/PA_OBTENER_TODO_TIPO_DEDUCCIONES.sql"
+        />
+    </changeSet>
+      
+    <changeSet id="TIPO_PRESTACION_PROCEDIMIENTOS" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_NMI_TIPO_PRESTACION_GUARDAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_NMI_TIPO_PRESTACION_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_NMI_TIPO_PRESTACION_ELIMINAR.sql"
+        />
+    </changeSet>
+    
+   <changeSet id="TIPO_PRESTACION_FUNCIONES" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/FN_OBTENER_LISTADO_TIPO_PRESTACION.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/FN_OBTENER_TIPO_PRESTACION_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/FN_OBTENER_TODO_TIPO_PRESTACION.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/FN_OBTENER_TOTAL_ELEMENTOS_TIPO_PRESTACION.sql"
+        />
+    </changeSet>
+    
+    <changeSet id="TIPO_PRESTACION_NUEVOS_PROCEDIMIENTOS" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_OBTENER_TIPO_PRESTACION_LISTADO.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_OBTENER_TIPO_PRESTACION_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="Tipo_Prestacion/PA_OBTENER_TODO_TIPO_PRESTACION.sql"
+        />
+    </changeSet> 
 </databaseChangeLog>
