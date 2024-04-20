@@ -38,7 +38,7 @@ BEGIN
                 FROM NMI_EMPLEADO E, NMI_EMPLEADO_PUESTO EP
                     WHERE E.EMP_Codigo = EP.EMP_Codigo AND
                     EP.EPU_Estado = 1 AND
-                    (P_IN_SEARCH IS NULL OR E.EMP_Codigo LIKE '%' || UPPER(P_IN_SEARCH) || '%') OR
+                    ((P_IN_SEARCH IS NULL OR E.EMP_Codigo LIKE '%' || UPPER(P_IN_SEARCH) || '%') OR
                     (P_IN_SEARCH IS NULL OR E.EMP_CUI LIKE '%' || UPPER(P_IN_SEARCH) || '%') OR
                     (P_IN_SEARCH IS NULL OR E.EMP_NIT LIKE '%' || UPPER(P_IN_SEARCH) || '%') OR
                     (P_IN_SEARCH IS NULL OR E.EMP_Primer_Nombre LIKE '%' || UPPER(P_IN_SEARCH) || '%') OR
@@ -52,7 +52,7 @@ BEGIN
                     (P_IN_SEARCH IS NULL OR E.EMP_Correo LIKE '%' || UPPER(P_IN_SEARCH) || '%') OR
                     (P_IN_SEARCH IS NULL OR E.EMP_Codigo_IGSS LIKE '%' || UPPER(P_IN_SEARCH) || '%') OR
                     (P_IN_SEARCH IS NULL OR E.EMP_Numero_Cuenta LIKE '%' || UPPER(P_IN_SEARCH) || '%') OR
-                    (P_IN_SEARCH IS NULL OR EP.EPU_Salario LIKE '%' || UPPER(P_IN_SEARCH) || '%')
+                    (P_IN_SEARCH IS NULL OR EP.EPU_Salario LIKE '%' || UPPER(P_IN_SEARCH) || '%'))
                         OFFSET V_NEW_PAGE ROWS FETCH NEXT P_IN_SIZE ROWS ONLY;
     RETURN CUR_REGISTROS;
 END;
