@@ -856,7 +856,6 @@
                 path="PERIODO/PA_NMI_PERIODO_ACTUALIZAR.sql"
         />
     </changeSet>
-    </changeSet>
 
     <changeSet id="EMPLOYEE_FUNCTIONS" author="rgaldamez">
         <sqlFile dbms="oracle"
@@ -902,6 +901,13 @@
                 dbms="oracle"
                 path="EMPLEADOS/PA_OBTENER_TODO_EMPLEADO.sql"
         />
+    </changeSet>
+
+
+    <changeSet id="ALTER_EMPLOYEE_COLUMNS" author="jbobadilla">
+        <modifyDataType tableName="NMI_EMPLEADO" columnName="EMP_CUI" newDataType="VARCHAR(20)"  />
+        <modifyDataType tableName="NMI_EMPLEADO" columnName="EMP_CODIGO_IGSS" newDataType="VARCHAR(20)"  />
+        <modifyDataType tableName="NMI_EMPLEADO" columnName="EMP_TELEFONO" newDataType="VARCHAR(13)"  />
     </changeSet>
 
 </databaseChangeLog>
