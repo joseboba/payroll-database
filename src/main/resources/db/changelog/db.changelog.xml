@@ -937,4 +937,43 @@
         </sql>
     </changeSet>
 
+    <changeSet id="UPDATE_LISTADO_SEARCH" author="jbobadilla">
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="DEPARTAMENTO/FN_OBTENER_LISTADO_DEPARTAMENTO_1.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="EMPLEADOS/FN_OBTENER_LISTADO_EMPLEADO_1.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PERIODO/FN_OBTENER_LISTADO_PERIODO_1.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="PUESTO/FN_OBTENER_LISTADO_PUESTO_1.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="TIPO_AUSENCIA/FN_OBTENER_LISTADO_TIPO_AUSENCIA_1.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="TIPO_DEDUCCIONES/FN_OBTENER_LISTADO_TIPO_DEDUCCIONES_1.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="TIPO_DESCUENTO/FN_OBTENER_LISTADO_TIPO_DESCUENTO_1.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="TIPO_MONEDA/FN_OBTENER_LISTADO_TIPO_MONEDA_1.sql"
+        />
+        <sqlFile dbms="oracle"
+                 endDelimiter="/"
+                 path="Tipo_Prestacion/FN_OBTENER_LISTADO_TIPO_PRESTACION_1.sql"
+        />
+    </changeSet>
+
 </databaseChangeLog>
