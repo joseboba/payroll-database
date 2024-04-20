@@ -839,5 +839,21 @@
         />
     </changeSet>
 
+    <changeSet id="ALTER_TABLE_NMI_PERIODO" author="jramirez">
+        <sql>
+            ALTER TABLE  NMI_PERIODO MODIFY PER_FECHA_INICIO TIMESTAMP;
+            ALTER TABLE  NMI_PERIODO MODIFY PER_FECHA_FINAL TIMESTAMP;
+        </sql>
+    </changeSet>
 
+    <changeSet id="PERIODO_PROCEDIMIENTOS_PROCEDURE_CORRECTION" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/PA_NMI_PERIODO_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PERIODO/PA_NMI_PERIODO_ACTUALIZAR.sql"
+        />
+    </changeSet>
 </databaseChangeLog>
