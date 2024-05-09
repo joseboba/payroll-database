@@ -857,61 +857,6 @@
         />
     </changeSet>
 
-    <changeSet id="ALTER_TABLE_NMI_EMPLEADO" author="rgaldamez">
-        <sql>
-            ALTER TABLE  NMI_EMPLEADO MODIFY EMP_Fecha_Nacimiento TIMESTAMP;
-            ALTER TABLE  NMI_EMPLEADO MODIFY EMP_Fecha_Inicio TIMESTAMP;
-            ALTER TABLE  NMI_EMPLEADO_PUESTO MODIFY EPU_Fecha_Final TIMESTAMP;
-            ALTER TABLE  NMI_EMPLEADO_PUESTO MODIFY EPU_Fecha_Final TIMESTAMP;
-        </sql>
-    </changeSet>
-
-    <changeSet id="EMPLOYEE_FUNCTIONS_3" author="rgaldamez">
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="EMPLEADOS/FN_OBTENER_EMPLEADO_POR_ID.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="EMPLEADOS/FN_OBTENER_LISTADO_EMPLEADO.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="EMPLEADOS/FN_OBTENER_TOTAL_ELEMENTOS_EMPLEADO.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="EMPLEADOS/FN_OBTENER_TODO_EMPLEADO.sql"
-        />
-    </changeSet>
-
-    <changeSet id="EMPLOYEE_PROCEDURES_3" author="rgaldamez">
-        <createProcedure
-                dbms="oracle"
-                path="EMPLEADOS/PA_NMI_EMPLEADO_ACTUALIZAR.sql"
-        />
-        <createProcedure
-                dbms="oracle"
-                path="EMPLEADOS/PA_NMI_EMPLEADO_DESHABILITAR.sql"
-        />
-        <createProcedure
-                dbms="oracle"
-                path="EMPLEADOS/PA_NMI_EMPLEADO_GUARDAR.sql"
-        />
-        <createProcedure
-                dbms="oracle"
-                path="EMPLEADOS/PA_OBTENER_EMPLEADO_LISTADO.sql"
-        />
-        <createProcedure
-                dbms="oracle"
-                path="EMPLEADOS/PA_OBTENER_EMPLEADO_POR_ID.sql"
-        />
-        <createProcedure
-                dbms="oracle"
-                path="EMPLEADOS/PA_OBTENER_TODO_EMPLEADO.sql"
-        />
-    </changeSet>
-
 
     <changeSet id="ALTER_EMPLOYEE_COLUMNS" author="jbobadilla">
         <modifyDataType tableName="NMI_EMPLEADO" columnName="EMP_CUI" newDataType="VARCHAR(20)"  />
@@ -946,42 +891,25 @@
         </sql>
     </changeSet>
 
-    <changeSet id="UPDATE_LISTADO_SEARCH" author="jbobadilla">
+    <changeSet id="ALTER_TABLE_NMI_EMPLEADO" author="rgaldamez">
+        <sql>
+            ALTER TABLE  NMI_EMPLEADO MODIFY EMP_Fecha_Nacimiento TIMESTAMP;
+            ALTER TABLE  NMI_EMPLEADO MODIFY EMP_Fecha_Inicio TIMESTAMP;
+            ALTER TABLE  NMI_EMPLEADO_PUESTO MODIFY EPU_Fecha_Final TIMESTAMP;
+            ALTER TABLE  NMI_EMPLEADO_PUESTO MODIFY EPU_Fecha_Final TIMESTAMP;
+        </sql>
+    </changeSet>
+
+    <changeSet id="ALTER_TABLE_NMI_EMPLEADO_FECHA_INICIO" author="rgaldamez">
+        <sql>
+            ALTER TABLE  NMI_EMPLEADO_PUESTO MODIFY EPU_Fecha_Inicio TIMESTAMP;
+        </sql>
+    </changeSet>
+
+    <changeSet id="CREATE_EMPLOYEE_TRIGGER" author="jbobadilla">
         <sqlFile dbms="oracle"
                  endDelimiter="/"
-                 path="DEPARTAMENTO/FN_OBTENER_LISTADO_DEPARTAMENTO_1.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="EMPLEADOS/FN_OBTENER_LISTADO_EMPLEADO_1.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="PERIODO/FN_OBTENER_LISTADO_PERIODO_1.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="PUESTO/FN_OBTENER_LISTADO_PUESTO_1.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="TIPO_AUSENCIA/FN_OBTENER_LISTADO_TIPO_AUSENCIA_1.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="TIPO_DEDUCCIONES/FN_OBTENER_LISTADO_TIPO_DEDUCCIONES_1.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="TIPO_DESCUENTO/FN_OBTENER_LISTADO_TIPO_DESCUENTO_1.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="TIPO_MONEDA/FN_OBTENER_LISTADO_TIPO_MONEDA_1.sql"
-        />
-        <sqlFile dbms="oracle"
-                 endDelimiter="/"
-                 path="Tipo_Prestacion/FN_OBTENER_LISTADO_TIPO_PRESTACION_1.sql"
+                 path="EMPLEADOS/T_ACTUALIZAR_EMPLEADO_PUESTO_REFERENCIA.sql"
         />
     </changeSet>
 
