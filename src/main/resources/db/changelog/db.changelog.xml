@@ -913,4 +913,94 @@
         />
     </changeSet>
 
+    <changeSet id="EMPLEADO_BONIFICACION" author="joseboba">
+        <sqlFile
+                dbms="oracle"
+                endDelimiter="/"
+                path="EMPLEADO_BONIFICACION/FN_OBTENER_BONIFICACIONES_POR_EMPLEADO.sql"
+        />
+        <sqlFile
+                dbms="oracle"
+                endDelimiter="/"
+                path="EMPLEADO_BONIFICACION/FN_OBTENER_BONIFICACIONES_QUE_NO_TIENE_EMPLEADO.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="EMPLEADO_BONIFICACION/PA_NMI_EMPLEADO_BONIFICACION_ELIMINAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_BONIFICACION/PA_NMI_EMPLEADO_BONIFICACION_INSERTAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_BONIFICACION/PA_OBTENER_BONIFICACIONES_POR_EMPLEADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_BONIFICACION/PA_OBTENER_BONIFICACIONES_QUE_NO_TIENE_EMPLEADO.sql"
+        />
+    </changeSet>
+
+    <changeSet id="EMPLEADO_DEDUCCIÓN" author="joseboba">
+        <sqlFile
+                dbms="oracle"
+                endDelimiter="/"
+                path="EMPLEADO_DEDUCCIONES/FN_OBTENER_DEDUCCIONES_POR_EMPLEADO.sql"
+        />
+        <sqlFile
+                dbms="oracle"
+                endDelimiter="/"
+                path="EMPLEADO_DEDUCCIONES/FN_OBTENER_DEDUCCIONES_QUE_NO_TIENE_EMPLEADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_DEDUCCIONES/PA_NMI_DEDUCCION_EMPLEADO_ELIMINAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_DEDUCCIONES/PA_NMI_DEDUCCION_EMPLEADO_INSERTAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_DEDUCCIONES/PA_OBTENER_DEDUCCIONES_POR_EMPLEADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_DEDUCCIONES/PA_OBTENER_DEDUCCIONES_QUE_NO_TIENE_EMPLEADO.sql"
+        />
+    </changeSet>
+
+    <changeSet id="EMPLEADOS" author="jbobadilla">
+        <createProcedure
+            dbms="oracle"
+            path="EMPLEADOS/PA_NMI_EMPLEADO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_NMI_EMPLEADO_DESHABILITAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_NMI_EMPLEADO_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_OBTENER_EMPLEADO_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_OBTENER_EMPLEADO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_OBTENER_TODO_EMPLEADO.sql"
+        />
+
+        <sqlFile path="EMPLEADOS/FN_OBTENER_EMPLEADO_POR_ID.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="EMPLEADOS/FN_OBTENER_LISTADO_EMPLEADO.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="EMPLEADOS/FN_OBTENER_TODO_EMPLEADO.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="EMPLEADOS/FN_OBTENER_TOTAL_ELEMENTOS_EMPLEADO.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
 </databaseChangeLog>
