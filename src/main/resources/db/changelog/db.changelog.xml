@@ -1003,6 +1003,42 @@
         <sqlFile path="EMPLEADOS/FN_OBTENER_TOTAL_ELEMENTOS_EMPLEADO.sql" dbms="oracle" endDelimiter="/" />
     </changeSet>
 
+    <changeSet id="BONIFICACIONES_LISTADOS" author="jbobadilla">
+
+        <createProcedure dbms="oracle" path="BONIFICACION/PA_OBTENER_LISTADO_BONIFICACION.sql"/>
+        <createProcedure dbms="oracle" path="BONIFICACION/PA_OBTENER_BONIFICACION_POR_ID.sql"/>
+        <createProcedure dbms="oracle" path="BONIFICACION/PA_OBTENER_TODO_BONIFICACION.sql"/>
+
+        <sqlFile path="BONIFICACION/FN_OBTENER_BONIFICACION_POR_ID.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="BONIFICACION/FN_OBTENER_LISTADO_BONIFICACION.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="BONIFICACION/FN_OBTENER_BONIFICACIONES.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="BONIFICACION/FN_OBTENER_TOTAL_ELEMENTOS_BONIFICACION.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
+    <changeSet id="SUSPENSION_LISTADOS" author="jbobadilla">
+
+        <createProcedure dbms="oracle" path="TIPO_SUSPENSION/PA_OBTENER_LISTADO_TIPO_SUSPENSION.sql"/>
+        <createProcedure dbms="oracle" path="TIPO_SUSPENSION/PA_OBTENER_TIPO_SUSPENSION_POR_ID.sql"/>
+        <createProcedure dbms="oracle" path="TIPO_SUSPENSION/PA_OBTENER_TODO_TIPO_SUSPENSION.sql"/>
+
+        <sqlFile path="TIPO_SUSPENSION/FN_OBTENER_TIPO_SUSPENSION_POR_ID.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="TIPO_SUSPENSION/FN_OBTENER_LISTADO_TIPO_SUSPENSION.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="TIPO_SUSPENSION/FN_OBTENER_TODO_TIPO_SUSPENSION.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="TIPO_SUSPENSION/FN_OBTENER_TOTAL_ELEMENTOS_TIPO_SUSPENSION.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
+    <changeSet id="OTRO_INGRESO_LISTADOS" author="jbobadilla">
+
+        <createProcedure dbms="oracle" path="OTRO_INGRESO/PA_OBTENER_LISTADO_OTRO_INGRESO.sql"/>
+        <createProcedure dbms="oracle" path="OTRO_INGRESO/PA_OBTENER_OTRO_INGRESO_POR_ID.sql"/>
+        <createProcedure dbms="oracle" path="OTRO_INGRESO/PA_OBTENER_TODO_OTROS_INGRESOS.sql"/>
+
+        <sqlFile path="OTRO_INGRESO/FN_OBTENER_OTRO_INGRESO_POR_ID.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="OTRO_INGRESO/FN_OBTENER_LISTADO_OTRO_INGRESO.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="OTRO_INGRESO/FN_OBTENER_TODO_OTROS_INGRESOS.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="OTRO_INGRESO/FN_OBTENER_TOTAL_ELEMENTOS_OTRO_INGRESO.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
     <changeSet id="CSV_STORE_PROCEDURES" author="jramirez">
         <createProcedure
                 dbms="oracle"
