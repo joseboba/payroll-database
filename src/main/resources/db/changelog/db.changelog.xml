@@ -1057,4 +1057,18 @@
                 path="VENTA/PA_NMI_VENTA_GUARDAR.sql"
         />
     </changeSet>
+
+    <changeSet id="HORAS_EXTRA_GET" author="jramirez">
+        <sqlFile
+                dbms="oracle"
+                path="HORAS_EXTRA/PA_OBTENER_HORAS_EXTRA_POR_EMPLEADO.sql"
+                endDelimiter="/"
+
+        />
+        <sqlFile
+                dbms="oracle"
+                path="HORAS_EXTRA/FN_OBTENER_HORAS_EXTRA_POR_EMPLEADO.sql"
+                endDelimiter="/"
+        />
+    </changeSet>
 </databaseChangeLog>
