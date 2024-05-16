@@ -913,4 +913,24 @@
         />
     </changeSet>
 
+    <changeSet id="CSV_STORE_PROCEDURES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="HORAS_EXTRA/PA_NMI_HORAS_EXTRAS_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PRESTAMO/PA_NMI_PRESTAMO_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PRODUCCION/PA_NMI_PRODUCCION_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="VENTA/PA_NMI_VENTA_GUARDAR.sql"
+        />
+    </changeSet>
+
+
 </databaseChangeLog>
