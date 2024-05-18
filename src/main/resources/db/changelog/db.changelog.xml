@@ -936,4 +936,205 @@
         />
     </changeSet>
 
+    <changeSet id="EMPLEADO_BONIFICACION" author="joseboba">
+        <sqlFile
+                dbms="oracle"
+                endDelimiter="/"
+                path="EMPLEADO_BONIFICACION/FN_OBTENER_BONIFICACIONES_POR_EMPLEADO.sql"
+        />
+        <sqlFile
+                dbms="oracle"
+                endDelimiter="/"
+                path="EMPLEADO_BONIFICACION/FN_OBTENER_BONIFICACIONES_QUE_NO_TIENE_EMPLEADO.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="EMPLEADO_BONIFICACION/PA_NMI_EMPLEADO_BONIFICACION_ELIMINAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_BONIFICACION/PA_NMI_EMPLEADO_BONIFICACION_INSERTAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_BONIFICACION/PA_OBTENER_BONIFICACIONES_POR_EMPLEADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_BONIFICACION/PA_OBTENER_BONIFICACIONES_QUE_NO_TIENE_EMPLEADO.sql"
+        />
+    </changeSet>
+
+    <changeSet id="EMPLEADO_DEDUCCIÓN" author="joseboba">
+        <sqlFile
+                dbms="oracle"
+                endDelimiter="/"
+                path="EMPLEADO_DEDUCCIONES/FN_OBTENER_DEDUCCIONES_POR_EMPLEADO.sql"
+        />
+        <sqlFile
+                dbms="oracle"
+                endDelimiter="/"
+                path="EMPLEADO_DEDUCCIONES/FN_OBTENER_DEDUCCIONES_QUE_NO_TIENE_EMPLEADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_DEDUCCIONES/PA_NMI_DEDUCCION_EMPLEADO_ELIMINAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_DEDUCCIONES/PA_NMI_DEDUCCION_EMPLEADO_INSERTAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_DEDUCCIONES/PA_OBTENER_DEDUCCIONES_POR_EMPLEADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADO_DEDUCCIONES/PA_OBTENER_DEDUCCIONES_QUE_NO_TIENE_EMPLEADO.sql"
+        />
+    </changeSet>
+
+    <changeSet id="EMPLEADOS" author="jbobadilla">
+        <createProcedure
+            dbms="oracle"
+            path="EMPLEADOS/PA_NMI_EMPLEADO_ACTUALIZAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_NMI_EMPLEADO_DESHABILITAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_NMI_EMPLEADO_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_OBTENER_EMPLEADO_LISTADO.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_OBTENER_EMPLEADO_POR_ID.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="EMPLEADOS/PA_OBTENER_TODO_EMPLEADO.sql"
+        />
+
+        <sqlFile path="EMPLEADOS/FN_OBTENER_EMPLEADO_POR_ID.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="EMPLEADOS/FN_OBTENER_LISTADO_EMPLEADO.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="EMPLEADOS/FN_OBTENER_TODO_EMPLEADO.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="EMPLEADOS/FN_OBTENER_TOTAL_ELEMENTOS_EMPLEADO.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
+    <changeSet id="BONIFICACIONES_LISTADOS" author="jbobadilla">
+
+        <createProcedure dbms="oracle" path="BONIFICACION/PA_OBTENER_LISTADO_BONIFICACION.sql"/>
+        <createProcedure dbms="oracle" path="BONIFICACION/PA_OBTENER_BONIFICACION_POR_ID.sql"/>
+        <createProcedure dbms="oracle" path="BONIFICACION/PA_OBTENER_TODO_BONIFICACION.sql"/>
+
+        <sqlFile path="BONIFICACION/FN_OBTENER_BONIFICACION_POR_ID.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="BONIFICACION/FN_OBTENER_LISTADO_BONIFICACION.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="BONIFICACION/FN_OBTENER_BONIFICACIONES.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="BONIFICACION/FN_OBTENER_TOTAL_ELEMENTOS_BONIFICACION.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
+    <changeSet id="SUSPENSION_LISTADOS" author="jbobadilla">
+
+        <createProcedure dbms="oracle" path="TIPO_SUSPENSION/PA_OBTENER_LISTADO_TIPO_SUSPENSION.sql"/>
+        <createProcedure dbms="oracle" path="TIPO_SUSPENSION/PA_OBTENER_TIPO_SUSPENSION_POR_ID.sql"/>
+        <createProcedure dbms="oracle" path="TIPO_SUSPENSION/PA_OBTENER_TODO_TIPO_SUSPENSION.sql"/>
+
+        <sqlFile path="TIPO_SUSPENSION/FN_OBTENER_TIPO_SUSPENSION_POR_ID.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="TIPO_SUSPENSION/FN_OBTENER_LISTADO_TIPO_SUSPENSION.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="TIPO_SUSPENSION/FN_OBTENER_TODO_TIPO_SUSPENSION.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="TIPO_SUSPENSION/FN_OBTENER_TOTAL_ELEMENTOS_TIPO_SUSPENSION.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
+    <changeSet id="OTRO_INGRESO_LISTADOS" author="jbobadilla">
+
+        <createProcedure dbms="oracle" path="OTRO_INGRESO/PA_OBTENER_LISTADO_OTRO_INGRESO.sql"/>
+        <createProcedure dbms="oracle" path="OTRO_INGRESO/PA_OBTENER_OTRO_INGRESO_POR_ID.sql"/>
+        <createProcedure dbms="oracle" path="OTRO_INGRESO/PA_OBTENER_TODO_OTROS_INGRESOS.sql"/>
+
+        <sqlFile path="OTRO_INGRESO/FN_OBTENER_OTRO_INGRESO_POR_ID.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="OTRO_INGRESO/FN_OBTENER_LISTADO_OTRO_INGRESO.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="OTRO_INGRESO/FN_OBTENER_TODO_OTROS_INGRESOS.sql" dbms="oracle" endDelimiter="/" />
+        <sqlFile path="OTRO_INGRESO/FN_OBTENER_TOTAL_ELEMENTOS_OTRO_INGRESO.sql" dbms="oracle" endDelimiter="/" />
+    </changeSet>
+
+
+    <changeSet id="ALTER_NMI_PRESTAMO_FECHA_MONTO" author="jramirez">
+        <sql>
+            ALTER TABLE NMI_PRESTAMO ADD PRE_MONTO_PAGADO NUMBER(10, 2) DEFAULT 0;
+            ALTER TABLE NMI_PRESTAMO ADD PRE_FECHA_INICIO TIMESTAMP;
+        </sql>
+    </changeSet>
+
+    <changeSet id="CSV_GETS" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="PRESTAMO/PA_NMI_PRESTAMO_GUARDAR.sql"
+        />
+
+        <createProcedure
+                dbms="oracle"
+                path="HORAS_EXTRA/PA_OBTENER_HORAS_EXTRA.sql"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="HORAS_EXTRA/FN_OBTENER_HORAS_EXTRA.sql"
+                endDelimiter="/"
+        />
+
+        <createProcedure
+                dbms="oracle"
+                path="PRESTAMO/PA_OBTENER_PRESTAMOS.sql"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="PRESTAMO/FN_OBTENER_PRESTAMOS.sql"
+                endDelimiter="/"
+        />
+
+        <createProcedure
+                dbms="oracle"
+                path="PRODUCCION/PA_OBTENER_PRODUCCIONES.sql"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="PRODUCCION/FN_OBTENER_PRODUCCIONES.sql"
+                endDelimiter="/"
+        />
+
+        <createProcedure
+                dbms="oracle"
+                path="VENTA/PA_OBTENER_VENTAS.sql"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="VENTA/FN_OBTENER_VENTA.sql"
+                endDelimiter="/"
+        />
+    </changeSet>
+
+    <changeSet id="CSV_GETS_FIX" author="jramirez">
+        <sqlFile
+                dbms="oracle"
+                path="HORAS_EXTRA/FN_OBTENER_HORAS_EXTRA.sql"
+                endDelimiter="/"
+        />
+
+        <sqlFile
+                dbms="oracle"
+                path="PRODUCCION/FN_OBTENER_PRODUCCIONES.sql"
+                endDelimiter="/"
+        />
+
+        <sqlFile
+                dbms="oracle"
+                path="VENTA/FN_OBTENER_VENTA.sql"
+                endDelimiter="/"
+        />
+    </changeSet>
+
 </databaseChangeLog>
