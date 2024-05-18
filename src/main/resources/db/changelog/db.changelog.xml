@@ -1093,4 +1093,25 @@
                 endDelimiter="/"
         />
     </changeSet>
+
+    <changeSet id="CSV_GETS_FIX" author="jramirez">
+        <sqlFile
+                dbms="oracle"
+                path="HORAS_EXTRA/FN_OBTENER_HORAS_EXTRA.sql"
+                endDelimiter="/"
+        />
+
+        <sqlFile
+                dbms="oracle"
+                path="PRODUCCION/FN_OBTENER_PRODUCCIONES.sql"
+                endDelimiter="/"
+        />
+
+        <sqlFile
+                dbms="oracle"
+                path="VENTA/FN_OBTENER_VENTA.sql"
+                endDelimiter="/"
+        />
+    </changeSet>
+
 </databaseChangeLog>
