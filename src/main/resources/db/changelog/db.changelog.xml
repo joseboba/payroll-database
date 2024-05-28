@@ -1152,4 +1152,18 @@
         />
     </changeSet>
 
+    <changeSet id="ALTER_NMI_PAGO_ADD_TOTAL_HORAS_EXTRA" author="rgaldamez">
+        <sql>
+            ALTER TABLE NMI_PAGO ADD PAG_Total_Horas_Extra NUMBER(10, 2) DEFAULT 0;
+        </sql>
+    </changeSet>
+
+    <changeSet id="FN_CALCULAR_TOTAL_HORAS_EXTRA_ADDED_1" author="rgaldamez">
+        <sqlFile
+                dbms="oracle"
+                path="HORAS_EXTRA/FN_CALCULAR_TOTAL_HORAS_EXTRA.sql"
+                endDelimiter="/"
+        />
+    </changeSet>
+
 </databaseChangeLog>
