@@ -1137,6 +1137,25 @@
         />
     </changeSet>
 
+
+    <changeSet id="VALIDACIONES_BONIFICACIONES_EMPLEADOS" author="jbarahona">
+
+      
+        <sqlFile path="EMPLEADO_BONIFICACION/FN_OBTENER_BONIFICACION_POR_ID_EMPLEADO.sql" dbms="oracle" endDelimiter="/" />
+           
+        <createProcedure dbms="oracle" path="EMPLEADO_BONIFICACION/PA_OBTENER_BONIFICACION_POR_ID_DE_EMPLEADO.sql"/>
+
+    </changeSet>
+    
+    <changeSet id="VALIDACIONES_DEDUCCIONES_EMPLEADOS" author="jbarahona">
+
+      
+        <sqlFile path="EMPLEADO_DEDUCCIONES/FN_OBTENER_DEDUCCION_POR_ID_DE_EMPLEADO.sql" dbms="oracle" endDelimiter="/" />
+           
+        <createProcedure dbms="oracle" path="EMPLEADO_DEDUCCIONES/PA_OBTENER_DEDUCCION_POR_ID_DE_EMPLEADO.sql"/>
+
+    </changeSet>
+
     <changeSet id="CSV_UPLOAD_PROCEDURES" author="jramirez">
         <createProcedure
                 dbms="oracle"
