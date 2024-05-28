@@ -372,6 +372,29 @@
             path="PUESTO/PA_NMI_PUESTO_ELIMINAR.sql"
         />
     </changeSet>
+
+    <changeSet id="HOURS_PROCEDURES_2" author="rgaldamez">
+        <createProcedure
+            dbms="oracle"
+            path="INGRESO_HORAS/PA_NMI_HORAS_GUARDAR_ENTRADA.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="INGRESO_HORAS/PA_NMI_HORAS_GUARDAR_SALIDA.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="INGRESO_HORAS/PA_OBTENER_HORAS_POR_FECHA.sql"
+        />
+    </changeSet>
+
+    <changeSet id="HOURS_FUNCTIONS_3" author="rgaldamez">
+        <sqlFile
+            dbms="oracle"
+            endDelimiter="/"
+            path="INGRESO_HORAS/FN_OBTENER_HORAS_POR_FECHA.sql"
+        />
+    </changeSet>
     
     <changeSet id="ADD_NAME_TO_ABSENCE_TYPE" author="jramirez">
         <sql>
@@ -906,7 +929,7 @@
         </sql>
     </changeSet>
 
-    <changeSet id="CREATE_EMPLOYEE_TRIGGER" author="jbobadilla">
+    <changeSet id="CREATE_EMPLOYEE_TRIGGER_1" author="jbobadilla">
         <sqlFile dbms="oracle"
                  endDelimiter="/"
                  path="EMPLEADOS/T_ACTUALIZAR_EMPLEADO_PUESTO_REFERENCIA.sql"
@@ -1114,6 +1137,7 @@
         />
     </changeSet>
 
+
     <changeSet id="VALIDACIONES_BONIFICACIONES_EMPLEADOS" author="jbarahona">
 
       
@@ -1131,4 +1155,20 @@
         <createProcedure dbms="oracle" path="EMPLEADO_DEDUCCIONES/PA_OBTENER_DEDUCCION_POR_ID_DE_EMPLEADO.sql"/>
 
     </changeSet>
+
+    <changeSet id="CSV_UPLOAD_PROCEDURES" author="jramirez">
+        <createProcedure
+                dbms="oracle"
+                path="HORAS_EXTRA/PA_NMI_HORAS_EXTRAS_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="PRODUCCION/PA_NMI_PRODUCCION_GUARDAR.sql"
+        />
+        <createProcedure
+                dbms="oracle"
+                path="VENTA/PA_NMI_VENTA_GUARDAR.sql"
+        />
+    </changeSet>
+
 </databaseChangeLog>
