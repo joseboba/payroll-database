@@ -1151,5 +1151,130 @@
                 path="VENTA/PA_NMI_VENTA_GUARDAR.sql"
         />
     </changeSet>
+    
+    <changeSet id="AUSENCIAS Y SUSPENCIONES FUNCIONES" author="FranciscoAQM">
+        <sqlFile
+                dbms="oracle"
+                path="AUSENCIAS/FN_OBTENER_AUSENCIAS_POR_ID.sql"
+                endDelimiter="/"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="AUSENCIAS/FN_OBTENER_LISTADO_AUSENCIAS.sql"
+                endDelimiter="/"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="AUSENCIAS/FN_OBTENER_NOMBRE_TIPO_AUSENCIA.sql"
+                endDelimiter="/"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="AUSENCIAS/FN_OBTENER_NOMBRE_TIPO_DESCUENTO.sql"
+                endDelimiter="/"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="AUSENCIAS/FN_OBTENER_TODO_AUSENCIAS.sql"
+                endDelimiter="/"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="AUSENCIAS/FN_OBTENER_TOTAL_ELEMENTOS_AUSENCIAS.sql"
+                endDelimiter="/"
+        />
+        
+        
+        <sqlFile
+                dbms="oracle"
+                path="SUSPENSION/FN_OBTENER_SUSPENSIONES_POR_ID.sql"
+                endDelimiter="/"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="SUSPENSION/FN_OBTENER_LISTADO_SUSPENSIONES.sql"
+                endDelimiter="/"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="SUSPENSION/FN_OBTENER_NOMBRE_TIPO_SUSPENSION.sql"
+                endDelimiter="/"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="SUSPENSION/FN_OBTENER_TODO_SUSPENSIONES.sql"
+                endDelimiter="/"
+        />
+        <sqlFile
+                dbms="oracle"
+                path="SUSPENSION/FN_OBTENER_TOTAL_ELEMENTOS_SUSPENSION.sql"
+                endDelimiter="/"
+        />
+    </changeSet>
+    
+    
+    <changeSet id="AUSENCIAS Y SUSPENCIONES PROCEDIMIENTOS" author="FranciscoAQM">
+        <createProcedure
+            dbms="oracle"
+            path="AUSENCIAS/PA_NMI_AUSENCIAS_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="AUSENCIAS/PA_NMI_AUSENCIAS_ELIMINAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="AUSENCIAS/PA_NMI_AUSENCIAS_INSERTAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="AUSENCIAS/PA_OBTENER_AUSENCIAS_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="AUSENCIAS/PA_OBTENER_LISTADO_AUSENCIAS.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="AUSENCIAS/PA_OBTENER_NOMBRE_TIPO_AUSENCIAS.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="AUSENCIAS/PA_OBTENER_NOMBRE_TIPO_DESCUENTO.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="AUSENCIAS/PA_OBTENER_TODO_AUSENCIAS.sql"
+        />
+        
+        <createProcedure
+            dbms="oracle"
+            path="SUSPENSIONES/PA_NMI_SUSPENSION_ACTUALIZAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="SUSPENSIONES/PA_NMI_SUSPENSION_ELIMINAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="SUSPENSIONES/PA_NMI_SUSPENSION_INSERTAR.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="SUSPENSIONES/PA_OBTENER_SUSPENSIONES_POR_ID.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="SUSPENSIONES/PA_OBTENER_LISTADO_SUSPENSIONES.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="SUSPENSIONES/PA_OBTENER_NOMBRE_TIPO_SUSPENSION.sql"
+        />
+        <createProcedure
+            dbms="oracle"
+            path="SUSPENSIONES/PA_OBTENER_TODO_SUSPENSIONES.sql"
+        />
+    </changeSet>
 
 </databaseChangeLog>

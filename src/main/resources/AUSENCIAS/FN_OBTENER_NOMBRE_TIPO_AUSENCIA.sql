@@ -6,8 +6,8 @@ BEGIN
     OPEN CUR_REGISTROS FOR
         SELECT  
             TA.TAU_CODIGO,
-            TA.TAU.NOMBRE    
-        FROM NMI_TIPO_AUSENCIA TA
+            TA.TAU_NOMBRE    
+        FROM NMI_TIPO_AUSENCIA TA;
     RETURN CUR_REGISTROS;
 END;
 /
