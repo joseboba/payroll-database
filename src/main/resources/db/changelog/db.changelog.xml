@@ -1234,7 +1234,7 @@
         />
         <createProcedure
             dbms="oracle"
-            path="AUSENCIAS/PA_OBTENER_NOMBRE_TIPO_AUSENCIAS.sql"
+            path="AUSENCIAS/PA_OBTENER_NOMBRE_TIPO_AUSENCIA.sql"
         />
         <createProcedure
             dbms="oracle"
