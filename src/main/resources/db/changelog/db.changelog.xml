@@ -1185,27 +1185,27 @@
         />
         <sqlFile
                 dbms="oracle"
-                path="SUSPENSION/FN_OBTENER_SUSPENSIONES_POR_ID.sql"
+                path="SUSPENSIONES/FN_OBTENER_SUSPENSIONES_POR_ID.sql"
                 endDelimiter="/"
         />
         <sqlFile
                 dbms="oracle"
-                path="SUSPENSION/FN_OBTENER_LISTADO_SUSPENSIONES.sql"
+                path="SUSPENSIONES/FN_OBTENER_LISTADO_SUSPENSIONES.sql"
                 endDelimiter="/"
         />
         <sqlFile
                 dbms="oracle"
-                path="SUSPENSION/FN_OBTENER_NOMBRE_TIPO_SUSPENSION.sql"
+                path="SUSPENSIONES/FN_OBTENER_NOMBRE_TIPO_SUSPENSION.sql"
                 endDelimiter="/"
         />
         <sqlFile
                 dbms="oracle"
-                path="SUSPENSION/FN_OBTENER_TODO_SUSPENSIONES.sql"
+                path="SUSPENSIONES/FN_OBTENER_TODO_SUSPENSIONES.sql"
                 endDelimiter="/"
         />
         <sqlFile
                 dbms="oracle"
-                path="SUSPENSION/FN_OBTENER_TOTAL_ELEMENTOS_SUSPENSION.sql"
+                path="SUSPENSIONES/FN_OBTENER_TOTAL_ELEMENTOS_SUSPENSION.sql"
                 endDelimiter="/"
         />
     </changeSet>
