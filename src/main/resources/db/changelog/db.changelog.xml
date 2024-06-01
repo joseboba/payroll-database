@@ -1183,8 +1183,6 @@
                 path="AUSENCIAS/FN_OBTENER_TOTAL_ELEMENTOS_AUSENCIAS.sql"
                 endDelimiter="/"
         />
-        
-        
         <sqlFile
                 dbms="oracle"
                 path="SUSPENSION/FN_OBTENER_SUSPENSIONES_POR_ID.sql"
@@ -1246,7 +1244,6 @@
             dbms="oracle"
             path="AUSENCIAS/PA_OBTENER_TODO_AUSENCIAS.sql"
         />
-        
         <createProcedure
             dbms="oracle"
             path="SUSPENSIONES/PA_NMI_SUSPENSION_ACTUALIZAR.sql"
